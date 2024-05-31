@@ -12,9 +12,11 @@ If you are unable to find your account in the tracker, it is likely because you 
 
 # Getting Started:
 
-Install dependencies: npm install
-Start development server: npm run dev
-Access the application at http://localhost:5173
+git clone https://github.com/your-username/valorant-match-tracker.git
+cd valorant-match-tracker
+npm install
+npm run dev
+
 
 # Technologies:
 
