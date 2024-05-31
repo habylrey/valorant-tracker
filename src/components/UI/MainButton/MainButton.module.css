@@ -1,0 +1,30 @@
+.myButton{
+    color: var(--bg-gray);
+    font-size: var(--m-font);
+    background-color: transparent;
+    outline: none;
+    border: none;
+    transition: .3s;
+    cursor: pointer;
+}
+.myButton:hover{
+    color: var(--riot-red);
+}
+.myButton_main{
+    font-size: var(--xl-font);
+    color: var(--riot-red);
+    border: 2px solid;
+    border-image: repeating-linear-gradient(135deg, var(--dark-gray) 0 10px, var(--bg-black) 0 20px, var(--riot-red) 0 30px) 8;
+    -webkit-mask: 
+    conic-gradient(from 180deg at top 8px right 8px, black 90deg, black 0)
+     var(--_i,200%) 0  /200% var(--_i,8px) border-box no-repeat,
+    conic-gradient(at bottom 8px left  8px,  black 90deg, black 0)
+     0   var(--_i,200%)/var(--_i,8px) 200% border-box no-repeat,
+    linear-gradient(black 0 0) padding-box no-repeat;
+    transition: .3s, -webkit-mask-position .3s .3s;
+}
+.myButton_main:hover{
+    --_i: 100%;
+    color: var(--riot-red);
+    transition: .3s, -webkit-mask-size .3s .3s;
+}

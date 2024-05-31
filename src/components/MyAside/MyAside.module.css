@@ -1,0 +1,56 @@
+.aside{
+    color: white;
+    width: 100%;
+    height: 100vh;
+    max-width: 450px;
+    flex-wrap: wrap;
+    gap: 20px;
+    background: var(--bg-black);
+    grid-area: 1 / 1 / 4 / 3;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+.input{
+    font-size: var(--xs-font);
+    padding: 15px 15px;
+    background: var(--moon-black);
+    border-radius: 7px;
+    outline: none;
+    border: none;
+    color: var(--riot-red);
+}
+.aside_panel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    gap: 15px;
+}
+
+.small_text{
+    color: var(--bg-gray);
+    font-size: var(--xs-font);
+    text-align: center;
+    pointer-events: none;
+}
+.modes_wrap{
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.aside_title{
+    text-align: center;
+}
+@media screen and (max-width: 870px) {
+    .aside{
+        width: 100%;
+        max-width: 100%;
+        height: 100%;
+        grid-area: 1 / 1 / 2 / 6;
+
+    }
+}

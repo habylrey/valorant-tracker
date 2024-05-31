@@ -1,0 +1,101 @@
+.map_image{
+    width: 100%;
+    max-width: 900px;
+    position: absolute;
+    z-index: 0;
+    top: -140%;
+    opacity: 40%;
+    user-select: none;
+    transition: transform 0.4s ease-in-out;
+
+}
+.map_image:hover{
+    transform: scale(10%);
+}
+.agent_image{
+    width: 100%;
+    max-width: 85px;
+    object-fit: contain;
+    background-color: transparent;
+    user-select: none;
+    transition: transform 0.4s ease-in-out;
+
+}
+.container{
+    height: 80px;
+    display: flex;
+    max-width: 900px;
+    color: white;
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px;
+    width: 100%;
+    cursor: pointer;
+}
+.container:hover{
+    .agent_image{
+        transform: scale(1.07);
+    } 
+    .map_image{
+        transform: scale(1.07);
+    }
+}
+.match_info{
+    position: relative;
+    z-index: 1;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+.title{
+    background: transparent;
+}
+.main_text{
+    background: transparent;
+}
+.container_xs{
+    background: transparent;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.main_title{
+    background: transparent;
+    position: relative;
+    z-index: -1;
+    right: 9%;
+}
+.wrap_s{
+    background: transparent;
+    display: flex;
+    align-items: center;
+    padding: 0 20px 0 0;
+}
+.wrap_xs{
+    background: transparent;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 0 20px;
+    text-align: center;
+}
+.result_text{
+    background: transparent;
+    color:white;
+    font-size: var(--m-font);
+    letter-spacing: 1px;
+    font-family: 'SpaceGrotesk';
+
+}
+@media screen and (max-width: 505px) {
+    .main_title {
+        font-size: var(--m-font);
+    }
+    .display{
+        display: none;
+    }
+
+}

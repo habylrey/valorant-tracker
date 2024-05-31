@@ -1,0 +1,58 @@
+@font-face {
+  font-family: 'Roboto';
+  src: url(./assets/fonts/Roboto-Medium.ttf);
+}
+@font-face {
+  font-family: 'SpaceGrotesk';
+  src: url(./assets/fonts/SpaceGrotesk-VariableFont_wght.ttf);
+}
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #0f1923;
+}
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 10px;
+}
+*{
+  box-sizing: border-box;
+  margin: 0 0;
+  font-family: 'Roboto';
+}
+#root{
+  /* MAIN COLORS */
+  --riot-red: #e80029;
+  --bg-black: #242424;
+  --moon-black: #2e2e2e;
+  --bg-darkBlue: #0f1923;
+  --dark-gray: #494949;
+  --bg-gray: #888;
+  /* FONT SIZE */
+  --xs-font: 10px;
+  --s-font: 15px;
+  --m-font: 20px;
+  --xl-font:30px;
+  /*  */
+  background: var(--bg-black) ;
+}
+
+::selection {
+  background: var(--riot-red); /* Safari */
+  color: var(--bg-black);  
+}
+  
+  ::-moz-selection {
+  background: var(--riot-red); /* Firefox */
+  color: var(--bg-black); 
+  }
+
+  .container {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    grid-column-gap: 50px;
+    grid-row-gap: 30px;
+    padding: 20px 20px;
+  }

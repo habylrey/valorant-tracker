@@ -1,0 +1,12 @@
+.myButton{
+    color: var(--bg-gray);
+    font-size: var(--m-font);
+    background-color: transparent;
+    outline: none;
+    border: none;
+    transition: .3s;
+    cursor: pointer;
+}
+.myButton:hover{
+    color: var(--riot-red);
+}
