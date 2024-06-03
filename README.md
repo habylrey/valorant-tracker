@@ -1,5 +1,6 @@
 
 # Valorant Match Tracker
+<img alt='example screen' src='./public/example_screen.png'>
 This application allows you to view your last 20 Valorant matches across Swiftplay, Competitive, and Unrated modes.
 
 # Features:
@@ -13,7 +14,9 @@ If you are unable to find your account in the tracker, it is likely because you 
 # Getting Started:
 
 Install dependencies: npm install
+<br />
 Start development server: npm run dev
+<br />
 Access the application at http://localhost:5173
 
 # Technologies:

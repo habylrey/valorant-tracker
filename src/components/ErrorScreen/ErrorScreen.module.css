@@ -22,3 +22,8 @@
     color: var(--riot-red);
     font-family: 'SpaceGrotesk'; 
 }
+.small_text{
+    color: var(--bg-gray);
+    font-size: var(--xs-font);
+    text-align: center;
+}

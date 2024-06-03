@@ -15,7 +15,12 @@ const App: React.FC = () => {
     setSpinning(true)
     try {
       const response = await fetch(
-        `https://api.tracker.gg/api/v2/valorant/standard/matches/riot/${gameName}%23${tagLine}?type=${mode.toLowerCase()}&season=&agent=all&map=all`
+        `https://api.tracker.gg/api/v2/valorant/standard/matches/riot/${gameName}%23${tagLine}?type=${mode.toLowerCase()}&season=&agent=all&map=all`, 
+        {
+          headers: {
+            'Access-Control-Allow-Origin': '*',
+            // 'x-api-key': '635d9c27-ff94-46a3-8c75-61d733f4c057', // Замените на ваш ключ API, если требуется
+          },}
       );
       const responseData: ApiResponse = await response.json();
       setData(responseData.data.matches);

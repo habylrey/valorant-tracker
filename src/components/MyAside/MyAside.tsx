@@ -13,6 +13,7 @@ export function MyAside ({setGamemode, userName, loading }: MyAsideProps) {
     }
     return (
         <aside className={classes.aside}>
+            <p style={{color: `var(--riot-red)`}} className={classes.small_text}>The application was created as a pet-project, not for commercial use.</p>
             <h1 className={classes.aside_title}>Search for latest Valorant matches by <a href="https://account.riotgames.com/">Riot ID</a></h1>
             <p className={classes.small_text}>Enter your Riot ID without the "#", for example : <strong>GAME NAME</strong> cat <strong>TAGLINE</strong> 0000</p>
             <div className={classes.aside_panel}>
@@ -28,6 +29,7 @@ export function MyAside ({setGamemode, userName, loading }: MyAsideProps) {
                 ))}
             </div>
             <MainButton userRoot={userName} userID={user} main={true}>Search</MainButton>
+            
+
         </aside>
-    );
-}
+    )}
