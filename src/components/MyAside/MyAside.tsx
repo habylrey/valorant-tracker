@@ -29,7 +29,5 @@ export function MyAside ({setGamemode, userName, loading }: MyAsideProps) {
                 ))}
             </div>
             <MainButton userRoot={userName} userID={user} main={true}>Search</MainButton>
-            
-
         </aside>
     )}
