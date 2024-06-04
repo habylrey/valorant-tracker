@@ -1,9 +1,11 @@
-import React, { useEffect, useState } from 'react';
+// src/App.tsx
+import React, { useState } from 'react';
 import './App.css';
-import { Match, ApiResponse} from './types';
+import { Match } from './types';
 import { MyAside } from './components/MyAside/MyAside';
-import { Spin } from 'antd';
 import { Content } from './components/Content/Content';
+import MatchFetcher from './components/MatchFetcher/MatchFetcher';
+
 const App: React.FC = () => {
   const [data, setData] = useState<Match[] | null>(null);
   const [mode, setMode] = useState('competitive');
@@ -11,45 +13,42 @@ const App: React.FC = () => {
   const [tagLine, setTagLine] = useState('v1c');
   const [spinning, setSpinning] = useState<boolean>(false);
   const [fatal, setFatal] = useState<boolean>(false);
-  const fetchingData = async () => {
-    setSpinning(true)
-    try {
-      const response = await fetch(
-        `https://api.tracker.gg/api/v2/valorant/standard/matches/riot/${gameName}%23${tagLine}?type=${mode.toLowerCase()}&season=&agent=all&map=all`
 
-      );
-      const responseData: ApiResponse = await response.json();
-      setData(responseData.data.matches);
-    } catch (error) {
-      setFatal(true)
-      console.error('Error fetching data:', error);
-    }
-    setSpinning(false)
+  const handleFetchSuccess = (fetchedData: Match[]) => {
+    setData(fetchedData);
+    setFatal(false);
   };
-  useEffect(() => {
-    fetchingData();
-  }, [gameName, tagLine, mode]);
 
-  if (spinning) {
-    return <Spin style={{background: '#242424'}} spinning={spinning} fullscreen />
-  }
+  const handleFetchError = () => {
+    setFatal(true);
+  };
+
   return (
-      <>
-        <div className='container'>
-          <MyAside 
-            userName={{
-              name: { gameName, setGameName },
-              tag: { tagLine, setTagLine }
-            }}
-            gamemode={mode} 
-            setGamemode={setMode}
-            loading={spinning}
-          />
-          <main className='content'>
-              <Content fatal={fatal} data={data}/>
-          </main>
-        </div>
-      </>
+    <>
+      <div className='container'>
+        <MyAside
+          userName={{
+            name: { gameName, setGameName },
+            tag: { tagLine, setTagLine },
+          }}
+          gamemode={mode}
+          setGamemode={setMode}
+          loading={spinning}
+        />
+        <main className='content'>
+          <Content fatal={fatal} data={data} />
+        </main>
+        <MatchFetcher
+          gameName={gameName}
+          tagLine={tagLine}
+          mode={mode}
+          onFetch={handleFetchSuccess}
+          onError={handleFetchError}
+          spinning={spinning}
+          setSpinning={setSpinning}
+        />
+      </div>
+    </>
   );
 };
 
